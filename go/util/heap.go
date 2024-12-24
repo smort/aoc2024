@@ -61,6 +61,10 @@ func (m *MaxHeap[T]) Pop() T {
 	return i.Value
 }
 
+func (m *MaxHeap[T]) PopItem() Item[T] {
+	return heap.Pop(m.heap).(Item[T])
+}
+
 func (m *MaxHeap[T]) Len() int { return len(*m.heap) }
 
 func NewMinHeap[T any](items ...Item[T]) *MinHeap[T] {
@@ -83,6 +87,10 @@ func (m *MinHeap[T]) Push(thing T, priority int) {
 func (m *MinHeap[T]) Pop() T {
 	i := heap.Pop(m.heap).(Item[T])
 	return i.Value
+}
+
+func (m *MinHeap[T]) PopItem() Item[T] {
+	return heap.Pop(m.heap).(Item[T])
 }
 
 func (m *MinHeap[T]) Len() int { return len(*m.heap) }
