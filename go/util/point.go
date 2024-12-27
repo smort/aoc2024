@@ -17,7 +17,7 @@ func (p Point) Add(other Point) Point {
 }
 
 func (p Point) Sub(other Point) Point {
-	return Point{X: p.X - other.X, Y: p.Y - p.Y}
+	return Point{X: p.X - other.X, Y: p.Y - other.Y}
 }
 
 func (p Point) In(g Grid) bool {
